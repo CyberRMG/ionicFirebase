@@ -8,16 +8,16 @@ import {
   IonCard,
   IonItem, 
   IonLabel, 
-  IonInput, 
-  IonCardContent,
+  IonInput,
   IonButton, 
-  IonList, IonContent, IonFooter, IonTitle, IonToolbar, IonHeader } from '@ionic/angular/standalone';
+  IonList, } from '@ionic/angular/standalone';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-numeros',
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonFooter, IonContent, IonButton,
+  imports: [
+    IonButton,
     IonInput, 
     IonLabel, 
     IonCardTitle,
@@ -25,7 +25,6 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore';
     IonCardHeader,
     IonCard,
     IonItem,
-    IonCardContent,
     IonList,
     CommonModule,
     FormsModule
@@ -76,6 +75,8 @@ export class NumerosComponent {
     }).catch(error => {
       console.error('Error al guardar en Firestore: ', error);
     });
+
+    this.numeroIngresado = 0;
   };
 
 }

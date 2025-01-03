@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body,
+ion-app,
+ion-content {
+  height: 100%;
+  overflow: auto; /* Asegura que el contenido desborde si es necesario */
+}
