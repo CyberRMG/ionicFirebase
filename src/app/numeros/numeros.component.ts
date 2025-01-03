@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonCardSubtitle,
@@ -10,7 +10,8 @@ import {
   IonLabel, 
   IonInput,
   IonButton, 
-  IonList, } from '@ionic/angular/standalone';
+  IonList,
+  IonContent, } from '@ionic/angular/standalone';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Component({
@@ -37,10 +38,9 @@ export class NumerosComponent {
   numeroIngresado!: number;
   numeros: number[] = [];
   resultados: { valor: number; color: string; multiplos: number[] }[] = [];
+  @ViewChild(IonContent) content!: IonContent
 
   private firestore = inject(Firestore);
-
-  ngOnInit() {}
 
   calcular() {
     // convierte el valor del input a number 
