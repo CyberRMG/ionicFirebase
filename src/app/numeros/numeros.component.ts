@@ -11,13 +11,13 @@ import {
   IonInput, 
   IonCardContent,
   IonButton, 
-  IonList, IonContent } from '@ionic/angular/standalone';
+  IonList, IonContent, IonFooter, IonTitle, IonToolbar, IonHeader } from '@ionic/angular/standalone';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-numeros',
   standalone: true,
-  imports: [IonContent, IonButton,
+  imports: [IonHeader, IonToolbar, IonTitle, IonFooter, IonContent, IonButton,
     IonInput, 
     IonLabel, 
     IonCardTitle,

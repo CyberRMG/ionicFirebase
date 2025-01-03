@@ -16,12 +16,14 @@
       Calcular
     </ion-button>
 
+    <ion-list class="lista">
+      <ion-item *ngFor="let resultado of resultados" [style.color]="resultado.color">
+        {{ resultado.valor }} - Múltiplos: {{ resultado.multiplos.join(', ') || 'Ninguno' }}
+      </ion-item>  
+    </ion-list>
   </ion-card>
-
-  <ion-list class="lista">
-    <ion-item *ngFor="let resultado of resultados" [style.color]="resultado.color">
-      {{ resultado.valor }} - Múltiplos: {{ resultado.multiplos.join(', ') || 'Ninguno' }}
-    </ion-item>  
-  </ion-list>
+  
 </div>
+
+
 
