@@ -1,0 +1,27 @@
+<div class="container">
+  <ion-card>
+    <ion-card-header color="primary">
+    <ion-card-subtitle>Prueba Técnica</ion-card-subtitle>
+    <ion-card-title>Contador de Números</ion-card-title>
+    </ion-card-header>
+
+    <ion-item>
+      <ion-label position="floating">Ingresa un número</ion-label>
+      <ion-input [(ngModel)]="numeroIngresado"></ion-input>
+    </ion-item>
+    
+    <ion-button (click)="calcular()" 
+      expand="full"
+      shape="round">
+      Calcular
+    </ion-button>
+
+  </ion-card>
+
+  <ion-list class="lista">
+    <ion-item *ngFor="let resultado of resultados" [style.color]="resultado.color">
+      {{ resultado.valor }} - Múltiplos: {{ resultado.multiplos.join(', ') || 'Ninguno' }}
+    </ion-item>  
+  </ion-list>
+</div>
+
